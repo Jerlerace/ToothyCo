@@ -1,0 +1,88 @@
+// Export pages
+export '/homepage_unified/homepage_unified_widget.dart'
+    show HomepageUnifiedWidget;
+export '/auth/splash/splash_widget.dart' show SplashWidget;
+export '/auth/p_sign_in/p_sign_in_widget.dart' show PSignInWidget;
+export '/auth/p_sign_up/p_sign_up_widget.dart' show PSignUpWidget;
+export '/patient/p_dashboard_patient/p_dashboard_patient_widget.dart'
+    show PDashboardPatientWidget;
+export '/patient/p_book_appointment_patient/p_book_appointment_patient_widget.dart'
+    show PBookAppointmentPatientWidget;
+export '/patient/p_view_dentists_all/p_view_dentists_all_widget.dart'
+    show PViewDentistsAllWidget;
+export '/patient/p_procedures_npricing_patient/p_procedures_npricing_patient_widget.dart'
+    show PProceduresNpricingPatientWidget;
+export '/profile/p_profile_user/p_profile_user_widget.dart'
+    show PProfileUserWidget;
+export '/auth/p_forgot_password_2/p_forgot_password2_widget.dart'
+    show PForgotPassword2Widget;
+export '/auth/p_forgot_password_1/p_forgot_password1_widget.dart'
+    show PForgotPassword1Widget;
+export '/dentist/p_dashboard_dentist/p_dashboard_dentist_widget.dart'
+    show PDashboardDentistWidget;
+export '/dentist/p_schedule_dentist/p_schedule_dentist_widget.dart'
+    show PScheduleDentistWidget;
+export '/dentist/appointment_related/p_appointments/p_appointments_widget.dart'
+    show PAppointmentsWidget;
+export '/dentist/p_patient_today/p_patient_today_widget.dart'
+    show PPatientTodayWidget;
+export '/profile/p_profile_dentist/p_profile_dentist_widget.dart'
+    show PProfileDentistWidget;
+export '/dentist/patient_stuffs_via_dentist_pov/treatment_records/treatment_records_widget.dart'
+    show TreatmentRecordsWidget;
+export '/admin/a_d_m_i_n_lastpages/p_admin_dashboard/p_admin_dashboard_widget.dart'
+    show PAdminDashboardWidget;
+export '/patient_management/patient_management_widget.dart'
+    show PatientManagementWidget;
+export '/admin/user_management/dentist_management/p_dentist_management/p_dentist_management_widget.dart'
+    show PDentistManagementWidget;
+export '/admin/procedures/p_procedures_view_admin/p_procedures_view_admin_widget.dart'
+    show PProceduresViewAdminWidget;
+export '/admin/user_management/p_user_management/p_user_management_widget.dart'
+    show PUserManagementWidget;
+export '/admin/user_management/dentist_management/p_admin_dentist_requests/p_admin_dentist_requests_widget.dart'
+    show PAdminDentistRequestsWidget;
+export '/profile/user_registration/p_dentist_registration_form/p_dentist_registration_form_widget.dart'
+    show PDentistRegistrationFormWidget;
+export '/patient/p_patient_history/p_patient_history_widget.dart'
+    show PPatientHistoryWidget;
+export '/admin/a_d_m_i_n_lastpages/p_revenue_view/p_revenue_view_widget.dart'
+    show PRevenueViewWidget;
+export '/admin/a_d_m_i_n_lastpages/admin_fulfillment_rate_focus/admin_fulfillment_rate_focus_widget.dart'
+    show AdminFulfillmentRateFocusWidget;
+export '/dentist/patient_stuffs_via_dentist_pov/dentist_total_patient_history_focus/dentist_total_patient_history_focus_widget.dart'
+    show DentistTotalPatientHistoryFocusWidget;
+export '/dentist/dentist_fulfillment_focus/dentist_fulfillment_focus_widget.dart'
+    show DentistFulfillmentFocusWidget;
+export '/dentist/dentist_analytics_focus/dentist_analytics_focus_widget.dart'
+    show DentistAnalyticsFocusWidget;
+export '/dentist/patient_stuffs_via_dentist_pov/dentist_patient_focus/dentist_patient_focus_widget.dart'
+    show DentistPatientFocusWidget;
+export '/admin/a_d_m_i_n_lastpages/admin_total_patient_history_focus/admin_total_patient_history_focus_widget.dart'
+    show AdminTotalPatientHistoryFocusWidget;
+export '/admin/admin_patient_focus/admin_patient_focus_widget.dart'
+    show AdminPatientFocusWidget;
+export '/admin/admin_dentist_info/admin_dentist_info_widget.dart'
+    show AdminDentistInfoWidget;
+export '/admin/p_admin_schedule_dentist/p_admin_schedule_dentist_widget.dart'
+    show PAdminScheduleDentistWidget;
+export '/admin/procedures/c_admin_add_procedure/c_admin_add_procedure_widget.dart'
+    show CAdminAddProcedureWidget;
+export '/admin/procedures/p_procedures_edit_admin/p_procedures_edit_admin_widget.dart'
+    show PProceduresEditAdminWidget;
+export '/profile/editing/p_edit_profile/p_edit_profile_widget.dart'
+    show PEditProfileWidget;
+export '/profile/editing/p_edit_email/p_edit_email_widget.dart'
+    show PEditEmailWidget;
+export '/profile/editing/p_edit_password/p_edit_password_widget.dart'
+    show PEditPasswordWidget;
+export '/admin/user_management/patient_management/p_patient_management/p_patient_management_widget.dart'
+    show PPatientManagementWidget;
+export '/admin/user_management/patient_management/p_patient_update/p_patient_update_widget.dart'
+    show PPatientUpdateWidget;
+export '/admin/a_d_m_i_n_lastpages/p_admin_leave_approvals/p_admin_leave_approvals_widget.dart'
+    show PAdminLeaveApprovalsWidget;
+export '/navbars/unified_nav_bar/unified_nav_bar_widget.dart'
+    show UnifiedNavBarWidget;
+export '/components/c_delete_confirmation/c_delete_confirmation_widget.dart'
+    show CDeleteConfirmationWidget;

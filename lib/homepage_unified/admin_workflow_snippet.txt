@@ -1,0 +1,880 @@
+221:                       if (homepageUnifiedUserRow?.userType == 'Admin')
+222:                       Column(
+223:                         mainAxisSize: MainAxisSize.max,
+224:                         children: [
+225:                           Padding(
+226:                             padding: EdgeInsetsDirectional.fromSTEB(
+227:                                 16.0, 0.0, 16.0, 0.0),
+228:                             child: Row(
+229:                               mainAxisSize: MainAxisSize.max,
+230:                               children: [
+231:                                 Expanded(
+232:                                   child: Padding(
+233:                                     padding: EdgeInsets.all(16.0),
+234:                                     child: FutureBuilder<List<AppointmentRow>>(
+235:                                       future: AppointmentTable().queryRows(
+236:                                         queryFn: (q) => q,
+237:                                       ),
+238:                                       builder: (context, snapshot) {
+239:                                         // Customize what your widget looks like when it's loading.
+240:                                         if (!snapshot.hasData) {
+241:                                           return Center(
+242:                                             child: SizedBox(
+243:                                               width: 50.0,
+244:                                               height: 50.0,
+245:                                               child: CircularProgressIndicator(
+246:                                                 valueColor:
+247:                                                     AlwaysStoppedAnimation<
+248:                                                         Color>(
+249:                                                   FlutterFlowTheme.of(context)
+250:                                                       .primary,
+251:                                                 ),
+252:                                               ),
+253:                                             ),
+254:                                           );
+255:                                         }
+256:                                         List<AppointmentRow>
+257:                                             containerAppointmentRowList =
+258:                                             snapshot.data!;
+259: 
+260:                                         return InkWell(
+261:                                           splashColor: Colors.transparent,
+262:                                           focusColor: Colors.transparent,
+263:                                           hoverColor: Colors.transparent,
+264:                                           highlightColor: Colors.transparent,
+265:                                           onTap: () async {
+266:                                             context.pushNamed(
+267:                                                 AdminTotalPatientHistoryFocusWidget
+268:                                                     .routeName);
+269:                                           },
+270:                                           child: Container(
+271:                                             width: 100.0,
+272:                                             decoration: BoxDecoration(
+273:                                               boxShadow: [
+274:                                                 BoxShadow(
+275:                                                   blurRadius: 12.0,
+276:                                                   color: Color(0x334F46E5),
+277:                                                   offset: Offset(
+278:                                                     0.0,
+279:                                                     4.0,
+280:                                                   ),
+281:                                                 )
+282:                                               ],
+283:                                               gradient: LinearGradient(
+284:                                                 colors: [
+285:                                                   Color(0xFF4F46E5),
+286:                                                   Color(0xFF7C3AED)
+287:                                                 ],
+288:                                                 stops: [0.0, 1.0],
+289:                                                 begin: AlignmentDirectional(
+290:                                                     1.0, 1.0),
+291:                                                 end: AlignmentDirectional(
+292:                                                     -1.0, -1.0),
+293:                                               ),
+294:                                               borderRadius:
+295:                                                   BorderRadius.circular(16.0),
+296:                                             ),
+297:                                             child: Padding(
+298:                                               padding: EdgeInsets.all(10.0),
+299:                                               child: Column(
+300:                                                 mainAxisSize: MainAxisSize.max,
+301:                                                 crossAxisAlignment:
+302:                                                     CrossAxisAlignment.start,
+303:                                                 children: [
+304:                                                   Row(
+305:                                                     mainAxisSize:
+306:                                                         MainAxisSize.max,
+307:                                                     mainAxisAlignment:
+308:                                                         MainAxisAlignment
+309:                                                             .spaceBetween,
+310:                                                     children: [
+311:                                                       Container(
+312:                                                         width: 36.0,
+313:                                                         height: 36.0,
+314:                                                         decoration:
+315:                                                             BoxDecoration(
+316:                                                           color:
+317:                                                               Color(0x33FFFFFF),
+318:                                                           borderRadius:
+319:                                                               BorderRadius
+320:                                                                   .circular(
+321:                                                                       10.0),
+322:                                                         ),
+323:                                                         child: Align(
+324:                                                           alignment:
+325:                                                               AlignmentDirectional(
+326:                                                                   0.0, 0.0),
+327:                                                           child: Icon(
+328:                                                             Icons
+329:                                                                 .calendar_today_rounded,
+330:                                                             color: Colors.white,
+331:                                                             size: 20.0,
+332:                                                           ),
+333:                                                         ),
+334:                                                       ),
+335:                                                       Container(
+336:                                                         height: 22.0,
+337:                                                         decoration:
+338:                                                             BoxDecoration(
+339:                                                           color:
+340:                                                               Color(0x33FFFFFF),
+341:                                                           borderRadius:
+342:                                                               BorderRadius
+343:                                                                   .circular(
+344:                                                                       20.0),
+345:                                                         ),
+346:                                                         child: Align(
+347:                                                           alignment:
+348:                                                               AlignmentDirectional(
+349:                                                                   0.0, 0.0),
+350:                                                           child: Padding(
+351:                                                             padding:
+352:                                                                 EdgeInsetsDirectional
+353:                                                                     .fromSTEB(
+354:                                                                         8.0,
+355:                                                                         0.0,
+356:                                                                         8.0,
+357:                                                                         0.0),
+358:                                                             child: Text(
+359:                                                               '+12%',
+360:                                                               style: FlutterFlowTheme
+361:                                                                       .of(context)
+362:                                                                   .bodySmall
+363:                                                                   .override(
+364:                                                                     font: GoogleFonts
+365:                                                                         .inter(
+366:                                                                       fontWeight:
+367:                                                                           FontWeight
+368:                                                                               .w600,
+369:                                                                       fontStyle: FlutterFlowTheme.of(
+370:                                                                               context)
+371:                                                                           .bodySmall
+372:                                                                           .fontStyle,
+373:                                                                     ),
+374:                                                                     color: Colors
+375:                                                                         .white,
+376:                                                                     fontSize:
+377:                                                                         11.0,
+378:                                                                     letterSpacing:
+379:                                                                         0.0,
+380:                                                                     fontWeight:
+381:                                                                         FontWeight
+382:                                                                             .w600,
+383:                                                                     fontStyle: FlutterFlowTheme.of(
+384:                                                                             context)
+385:                                                                         .bodySmall
+386:                                                                         .fontStyle,
+387:                                                                   ),
+388:                                                             ),
+389:                                                           ),
+390:                                                         ),
+391:                                                       ),
+392:                                                     ],
+393:                                                   ),
+394:                                                   Text(
+395:                                                     formatNumber(
+396:                                                       containerAppointmentRowList
+397:                                                           .length,
+398:                                                       formatType:
+399:                                                           FormatType.compact,
+400:                                                     ),
+401:                                                     style: FlutterFlowTheme.of(
+402:                                                             context)
+403:                                                         .headlineMedium
+404:                                                         .override(
+405:                                                           font: GoogleFonts
+406:                                                               .interTight(
+407:                                                             fontWeight:
+408:                                                                 FontWeight.bold,
+409:                                                             fontStyle:
+410:                                                                 FlutterFlowTheme.of(
+411:                                                                         context)
+412:                                                                     .headlineMedium
+413:                                                                     .fontStyle,
+414:                                                           ),
+415:                                                           color: Colors.white,
+416:                                                           letterSpacing: 0.0,
+417:                                                           fontWeight:
+418:                                                               FontWeight.bold,
+419:                                                           fontStyle:
+420:                                                               FlutterFlowTheme.of(
+421:                                                                       context)
+422:                                                                   .headlineMedium
+423:                                                                   .fontStyle,
+424:                                                         ),
+425:                                                   ),
+426:                                                   Text(
+427:                                                     'Total Appointments',
+428:                                                     style: FlutterFlowTheme.of(
+429:                                                             context)
+430:                                                         .bodySmall
+431:                                                         .override(
+432:                                                           font:
+433:                                                               GoogleFonts.inter(
+434:                                                             fontWeight:
+435:                                                                 FlutterFlowTheme.of(
+436:                                                                         context)
+437:                                                                     .bodySmall
+438:                                                                     .fontWeight,
+439:                                                             fontStyle:
+440:                                                                 FlutterFlowTheme.of(
+441:                                                                         context)
+442:                                                                     .bodySmall
+443:                                                                     .fontStyle,
+444:                                                           ),
+445:                                                           color:
+446:                                                               Color(0xCCFFFFFF),
+447:                                                           fontSize: 11.0,
+448:                                                           letterSpacing: 0.0,
+449:                                                           fontWeight:
+450:                                                               FlutterFlowTheme.of(
+451:                                                                       context)
+452:                                                                   .bodySmall
+453:                                                                   .fontWeight,
+454:                                                           fontStyle:
+455:                                                               FlutterFlowTheme.of(
+456:                                                                       context)
+457:                                                                   .bodySmall
+458:                                                                   .fontStyle,
+459:                                                         ),
+460:                                                   ),
+461:                                                 ].divide(SizedBox(height: 8.0)),
+462:                                               ),
+463:                                             ),
+464:                                           ),
+465:                                         );
+466:                                       },
+467:                                     ),
+468:                                   ),
+469:                                 ),
+470:                                 Expanded(
+471:                                   child: Padding(
+472:                                     padding: EdgeInsets.all(16.0),
+473:                                     child: InkWell(
+474:                                       splashColor: Colors.transparent,
+475:                                       focusColor: Colors.transparent,
+476:                                       hoverColor: Colors.transparent,
+477:                                       highlightColor: Colors.transparent,
+478:                                       onTap: () async {
+479:                                         context.pushNamed(
+480:                                             PRevenueViewWidget.routeName);
+481:                                       },
+482:                                       child: Container(
+483:                                         width: 100.0,
+484:                                         decoration: BoxDecoration(
+485:                                           boxShadow: [
+486:                                             BoxShadow(
+487:                                               blurRadius: 12.0,
+488:                                               color: Color(0x33059669),
+489:                                               offset: Offset(
+490:                                                 0.0,
+491:                                                 4.0,
+492:                                               ),
+493:                                             )
+494:                                           ],
+495:                                           gradient: LinearGradient(
+496:                                             colors: [
+497:                                               Color(0xFF059669),
+498:                                               Color(0xFF10B981)
+499:                                             ],
+500:                                             stops: [0.0, 1.0],
+501:                                             begin:
+502:                                                 AlignmentDirectional(1.0, 1.0),
+503:                                             end: AlignmentDirectional(
+504:                                                 -1.0, -1.0),
+505:                                           ),
+506:                                           borderRadius:
+507:                                               BorderRadius.circular(16.0),
+508:                                         ),
+509:                                         child: Padding(
+510:                                           padding: EdgeInsets.all(10.0),
+511:                                           child: Column(
+512:                                             mainAxisSize: MainAxisSize.max,
+513:                                             crossAxisAlignment:
+514:                                                 CrossAxisAlignment.start,
+515:                                             children: [
+516:                                               Row(
+517:                                                 mainAxisSize: MainAxisSize.max,
+518:                                                 mainAxisAlignment:
+519:                                                     MainAxisAlignment
+520:                                                         .spaceBetween,
+521:                                                 children: [
+522:                                                   Container(
+523:                                                     width: 36.0,
+524:                                                     height: 36.0,
+525:                                                     decoration: BoxDecoration(
+526:                                                       color: Color(0x33FFFFFF),
+527:                                                       borderRadius:
+528:                                                           BorderRadius.circular(
+529:                                                               10.0),
+530:                                                     ),
+531:                                                     child: Align(
+532:                                                       alignment:
+533:                                                           AlignmentDirectional(
+534:                                                               0.0, 0.0),
+535:                                                       child: Icon(
+536:                                                         Icons
+537:                                                             .attach_money_rounded,
+538:                                                         color: Colors.white,
+539:                                                         size: 20.0,
+540:                                                       ),
+541:                                                     ),
+542:                                                   ),
+543:                                                   Container(
+544:                                                     height: 22.0,
+545:                                                     decoration: BoxDecoration(
+546:                                                       color: Color(0x33FFFFFF),
+547:                                                       borderRadius:
+548:                                                           BorderRadius.circular(
+549:                                                               20.0),
+550:                                                     ),
+551:                                                     child: Align(
+552:                                                       alignment:
+553:                                                           AlignmentDirectional(
+554:                                                               0.0, 0.0),
+555:                                                       child: Padding(
+556:                                                         padding:
+557:                                                             EdgeInsetsDirectional
+558:                                                                 .fromSTEB(
+559:                                                                     8.0,
+560:                                                                     0.0,
+561:                                                                     8.0,
+562:                                                                     0.0),
+563:                                                         child: Text(
+564:                                                           '+8%',
+565:                                                           style: FlutterFlowTheme
+566:                                                                   .of(context)
+567:                                                               .bodySmall
+568:                                                               .override(
+569:                                                                 font:
+570:                                                                     GoogleFonts
+571:                                                                         .inter(
+572:                                                                   fontWeight:
+573:                                                                       FontWeight
+574:                                                                           .w600,
+575:                                                                   fontStyle: FlutterFlowTheme.of(
+576:                                                                           context)
+577:                                                                       .bodySmall
+578:                                                                       .fontStyle,
+579:                                                                 ),
+580:                                                                 color: Colors
+581:                                                                     .white,
+582:                                                                 fontSize: 11.0,
+583:                                                                 letterSpacing:
+584:                                                                     0.0,
+585:                                                                 fontWeight:
+586:                                                                     FontWeight
+587:                                                                         .w600,
+588:                                                                 fontStyle: FlutterFlowTheme.of(
+589:                                                                         context)
+590:                                                                     .bodySmall
+591:                                                                     .fontStyle,
+592:                                                               ),
+593:                                                         ),
+594:                                                       ),
+595:                                                     ),
+596:                                                   ),
+597:                                                 ],
+598:                                               ),
+599:                                               Text(
+600:                                                 '\$48.2K',
+601:                                                 style:
+602:                                                     FlutterFlowTheme.of(context)
+603:                                                         .headlineMedium
+604:                                                         .override(
+605:                                                           font: GoogleFonts
+606:                                                               .interTight(
+607:                                                             fontWeight:
+608:                                                                 FontWeight.bold,
+609:                                                             fontStyle:
+610:                                                                 FlutterFlowTheme.of(
+611:                                                                         context)
+612:                                                                     .headlineMedium
+613:                                                                     .fontStyle,
+614:                                                           ),
+615:                                                           color: Colors.white,
+616:                                                           letterSpacing: 0.0,
+617:                                                           fontWeight:
+618:                                                               FontWeight.bold,
+619:                                                           fontStyle:
+620:                                                               FlutterFlowTheme.of(
+621:                                                                       context)
+622:                                                                   .headlineMedium
+623:                                                                   .fontStyle,
+624:                                                         ),
+625:                                               ),
+626:                                               Text(
+627:                                                 'Monthly Revenue',
+628:                                                 style: FlutterFlowTheme.of(
+629:                                                         context)
+630:                                                     .bodySmall
+631:                                                     .override(
+632:                                                       font: GoogleFonts.inter(
+633:                                                         fontWeight:
+634:                                                             FlutterFlowTheme.of(
+635:                                                                     context)
+636:                                                                 .bodySmall
+637:                                                                 .fontWeight,
+638:                                                         fontStyle:
+639:                                                             FlutterFlowTheme.of(
+640:                                                                     context)
+641:                                                                 .bodySmall
+642:                                                                 .fontStyle,
+643:                                                       ),
+644:                                                       color: Color(0xCCFFFFFF),
+645:                                                       fontSize: 11.0,
+646:                                                       letterSpacing: 0.0,
+647:                                                       fontWeight:
+648:                                                           FlutterFlowTheme.of(
+649:                                                                   context)
+650:                                                               .bodySmall
+651:                                                               .fontWeight,
+652:                                                       fontStyle:
+653:                                                           FlutterFlowTheme.of(
+654:                                                                   context)
+655:                                                               .bodySmall
+656:                                                               .fontStyle,
+657:                                                     ),
+658:                                               ),
+659:                                             ].divide(SizedBox(height: 8.0)),
+660:                                           ),
+661:                                         ),
+662:                                       ),
+663:                                     ),
+664:                                   ),
+665:                                 ),
+666:                               ].divide(SizedBox(width: 12.0)),
+667:                             ),
+668:                           ),
+669:                           Padding(
+670:                             padding: EdgeInsetsDirectional.fromSTEB(
+671:                                 16.0, 0.0, 16.0, 0.0),
+672:                             child: Row(
+673:                               mainAxisSize: MainAxisSize.max,
+674:                               children: [
+675:                                 Expanded(
+676:                                   child: Padding(
+677:                                     padding: EdgeInsets.all(16.0),
+678:                                     child: FutureBuilder<List<UserRow>>(
+679:                                       future: UserTable().queryRows(
+680:                                         queryFn: (q) => q.eqOrNull(
+681:                                           'user_type',
+682:                                           'Patient',
+683:                                         ),
+684:                                       ),
+685:                                       builder: (context, snapshot) {
+686:                                         // Customize what your widget looks like when it's loading.
+687:                                         if (!snapshot.hasData) {
+688:                                           return Center(
+689:                                             child: SizedBox(
+690:                                               width: 50.0,
+691:                                               height: 50.0,
+692:                                               child: CircularProgressIndicator(
+693:                                                 valueColor:
+694:                                                     AlwaysStoppedAnimation<
+695:                                                         Color>(
+696:                                                   FlutterFlowTheme.of(context)
+697:                                                       .primary,
+698:                                                 ),
+699:                                               ),
+700:                                             ),
+701:                                           );
+702:                                         }
+703:                                         List<UserRow> containerUserRowList =
+704:                                             snapshot.data!;
+705: 
+706:                                         return InkWell(
+707:                                           splashColor: Colors.transparent,
+708:                                           focusColor: Colors.transparent,
+709:                                           hoverColor: Colors.transparent,
+710:                                           highlightColor: Colors.transparent,
+711:                                           onTap: () async {
+712:                                             context.pushNamed(
+713:                                                 PPatientManagementWidget
+714:                                                     .routeName);
+715:                                           },
+716:                                           child: Container(
+717:                                             width: 100.0,
+718:                                             decoration: BoxDecoration(
+719:                                               boxShadow: [
+720:                                                 BoxShadow(
+721:                                                   blurRadius: 12.0,
+722:                                                   color: Color(0x33F59E0B),
+723:                                                   offset: Offset(
+724:                                                     0.0,
+725:                                                     4.0,
+726:                                                   ),
+727:                                                 )
+728:                                               ],
+729:                                               gradient: LinearGradient(
+730:                                                 colors: [
+731:                                                   Color(0xFFF59E0B),
+732:                                                   Color(0xFFEF4444)
+733:                                                 ],
+734:                                                 stops: [0.0, 1.0],
+735:                                                 begin: AlignmentDirectional(
+736:                                                     1.0, 1.0),
+737:                                                 end: AlignmentDirectional(
+738:                                                     -1.0, -1.0),
+739:                                               ),
+740:                                               borderRadius:
+741:                                                   BorderRadius.circular(16.0),
+742:                                             ),
+743:                                             child: Padding(
+744:                                               padding: EdgeInsets.all(10.0),
+745:                                               child: Column(
+746:                                                 mainAxisSize: MainAxisSize.max,
+747:                                                 crossAxisAlignment:
+748:                                                     CrossAxisAlignment.start,
+749:                                                 children: [
+750:                                                   Row(
+751:                                                     mainAxisSize:
+752:                                                         MainAxisSize.max,
+753:                                                     mainAxisAlignment:
+754:                                                         MainAxisAlignment
+755:                                                             .spaceBetween,
+756:                                                     children: [
+757:                                                       Container(
+758:                                                         width: 36.0,
+759:                                                         height: 36.0,
+760:                                                         decoration:
+761:                                                             BoxDecoration(
+762:                                                           color:
+763:                                                               Color(0x33FFFFFF),
+764:                                                           borderRadius:
+765:                                                               BorderRadius
+766:                                                                   .circular(
+767:                                                                       10.0),
+768:                                                         ),
+769:                                                         child: Align(
+770:                                                           alignment:
+771:                                                               AlignmentDirectional(
+772:                                                                   0.0, 0.0),
+773:                                                           child: Icon(
+774:                                                             Icons
+775:                                                                 .person_add_alt_1_rounded,
+776:                                                             color: Colors.white,
+777:                                                             size: 20.0,
+778:                                                           ),
+779:                                                         ),
+780:                                                       ),
+781:                                                       Container(
+782:                                                         height: 22.0,
+783:                                                         decoration:
+784:                                                             BoxDecoration(
+785:                                                           color:
+786:                                                               Color(0x33FFFFFF),
+787:                                                           borderRadius:
+788:                                                               BorderRadius
+789:                                                                   .circular(
+790:                                                                       20.0),
+791:                                                         ),
+792:                                                         child: Align(
+793:                                                           alignment:
+794:                                                               AlignmentDirectional(
+795:                                                                   0.0, 0.0),
+796:                                                           child: Padding(
+797:                                                             padding:
+798:                                                                 EdgeInsetsDirectional
+799:                                                                     .fromSTEB(
+800:                                                                         8.0,
+801:                                                                         0.0,
+802:                                                                         8.0,
+803:                                                                         0.0),
+804:                                                             child: Text(
+805:                                                               '+24%',
+806:                                                               style: FlutterFlowTheme
+807:                                                                       .of(context)
+808:                                                                   .bodySmall
+809:                                                                   .override(
+810:                                                                     font: GoogleFonts
+811:                                                                         .inter(
+812:                                                                       fontWeight:
+813:                                                                           FontWeight
+814:                                                                               .w600,
+815:                                                                       fontStyle: FlutterFlowTheme.of(
+816:                                                                               context)
+817:                                                                           .bodySmall
+818:                                                                           .fontStyle,
+819:                                                                     ),
+820:                                                                     color: Colors
+821:                                                                         .white,
+822:                                                                     fontSize:
+823:                                                                         11.0,
+824:                                                                     letterSpacing:
+825:                                                                         0.0,
+826:                                                                     fontWeight:
+827:                                                                         FontWeight
+828:                                                                             .w600,
+829:                                                                     fontStyle: FlutterFlowTheme.of(
+830:                                                                             context)
+831:                                                                         .bodySmall
+832:                                                                         .fontStyle,
+833:                                                                   ),
+834:                                                             ),
+835:                                                           ),
+836:                                                         ),
+837:                                                       ),
+838:                                                     ],
+839:                                                   ),
+840:                                                   Text(
+841:                                                     formatNumber(
+842:                                                       containerUserRowList
+843:                                                           .length,
+844:                                                       formatType:
+845:                                                           FormatType.compact,
+846:                                                     ),
+847:                                                     style: FlutterFlowTheme.of(
+848:                                                             context)
+849:                                                         .headlineMedium
+850:                                                         .override(
+851:                                                           font: GoogleFonts
+852:                                                               .interTight(
+853:                                                             fontWeight:
+854:                                                                 FontWeight.bold,
+855:                                                             fontStyle:
+856:                                                                 FlutterFlowTheme.of(
+857:                                                                         context)
+858:                                                                     .headlineMedium
+859:                                                                     .fontStyle,
+860:                                                           ),
+861:                                                           color: Colors.white,
+862:                                                           letterSpacing: 0.0,
+863:                                                           fontWeight:
+864:                                                               FontWeight.bold,
+865:                                                           fontStyle:
+866:                                                               FlutterFlowTheme.of(
+867:                                                                       context)
+868:                                                                   .headlineMedium
+869:                                                                   .fontStyle,
+870:                                                         ),
+871:                                                   ),
+872:                                                   Text(
+873:                                                     'Patients',
+874:                                                     style: FlutterFlowTheme.of(
+875:                                                             context)
+876:                                                         .bodySmall
+877:                                                         .override(
+878:                                                           font:
+879:                                                               GoogleFonts.inter(
+880:                                                             fontWeight:
+881:                                                                 FlutterFlowTheme.of(
+882:                                                                         context)
+883:                                                                     .bodySmall
+884:                                                                     .fontWeight,
+885:                                                             fontStyle:
+886:                                                                 FlutterFlowTheme.of(
+887:                                                                         context)
+888:                                                                     .bodySmall
+889:                                                                     .fontStyle,
+890:                                                           ),
+891:                                                           color:
+892:                                                               Color(0xCCFFFFFF),
+893:                                                           fontSize: 11.0,
+894:                                                           letterSpacing: 0.0,
+895:                                                           fontWeight:
+896:                                                               FlutterFlowTheme.of(
+897:                                                                       context)
+898:                                                                   .bodySmall
+899:                                                                   .fontWeight,
+900:                                                           fontStyle:
+901:                                                               FlutterFlowTheme.of(
+902:                                                                       context)
+903:                                                                   .bodySmall
+904:                                                                   .fontStyle,
+905:                                                         ),
+906:                                                   ),
+907:                                                 ].divide(SizedBox(height: 8.0)),
+908:                                               ),
+909:                                             ),
+910:                                           ),
+911:                                         );
+912:                                       },
+913:                                     ),
+914:                                   ),
+915:                                 ),
+916:                                 Expanded(
+917:                                   child: Padding(
+918:                                     padding: EdgeInsets.all(16.0),
+919:                                     child: InkWell(
+920:                                       splashColor: Colors.transparent,
+921:                                       focusColor: Colors.transparent,
+922:                                       hoverColor: Colors.transparent,
+923:                                       highlightColor: Colors.transparent,
+924:                                       onTap: () async {
+925:                                         context.pushNamed(
+926:                                             AdminFulfillmentRateFocusWidget
+927:                                                 .routeName);
+928:                                       },
+929:                                       child: Container(
+930:                                         width: 100.0,
+931:                                         decoration: BoxDecoration(
+932:                                           boxShadow: [
+933:                                             BoxShadow(
+934:                                               blurRadius: 12.0,
+935:                                               color: Color(0x330EA5E9),
+936:                                               offset: Offset(
+937:                                                 0.0,
+938:                                                 4.0,
+939:                                               ),
+940:                                             )
+941:                                           ],
+942:                                           gradient: LinearGradient(
+943:                                             colors: [
+944:                                               Color(0xFF0EA5E9),
+945:                                               Color(0xFF6366F1)
+946:                                             ],
+947:                                             stops: [0.0, 1.0],
+948:                                             begin:
+949:                                                 AlignmentDirectional(1.0, 1.0),
+950:                                             end: AlignmentDirectional(
+951:                                                 -1.0, -1.0),
+952:                                           ),
+953:                                           borderRadius:
+954:                                               BorderRadius.circular(16.0),
+955:                                         ),
+956:                                         child: Padding(
+957:                                           padding: EdgeInsets.all(10.0),
+958:                                           child: Column(
+959:                                             mainAxisSize: MainAxisSize.max,
+960:                                             crossAxisAlignment:
+961:                                                 CrossAxisAlignment.start,
+962:                                             children: [
+963:                                               Row(
+964:                                                 mainAxisSize: MainAxisSize.max,
+965:                                                 mainAxisAlignment:
+966:                                                     MainAxisAlignment
+967:                                                         .spaceBetween,
+968:                                                 children: [
+969:                                                   Container(
+970:                                                     width: 36.0,
+971:                                                     height: 36.0,
+972:                                                     decoration: BoxDecoration(
+973:                                                       color: Color(0x33FFFFFF),
+974:                                                       borderRadius:
+975:                                                           BorderRadius.circular(
+976:                                                               10.0),
+977:                                                     ),
+978:                                                     child: Align(
+979:                                                       alignment:
+980:                                                           AlignmentDirectional(
+981:                                                               0.0, 0.0),
+982:                                                       child: Icon(
+983:                                                         Icons
+984:                                                             .check_circle_outline_rounded,
+985:                                                         color: Colors.white,
+986:                                                         size: 20.0,
+987:                                                       ),
+988:                                                     ),
+989:                                                   ),
+990:                                                   Container(
+991:                                                     height: 22.0,
+992:                                                     decoration: BoxDecoration(
+993:                                                       color: Color(0x33FFFFFF),
+994:                                                       borderRadius:
+995:                                                           BorderRadius.circular(
+996:                                                               20.0),
+997:                                                     ),
+998:                                                     child: Align(
+999:                                                       alignment:
+1000:                                                           AlignmentDirectional(
+1001:                                                               0.0, 0.0),
+1002:                                                       child: Padding(
+1003:                                                         padding:
+1004:                                                             EdgeInsetsDirectional
+1005:                                                                 .fromSTEB(
+1006:                                                                     8.0,
+1007:                                                                     0.0,
+1008:                                                                     8.0,
+1009:                                                                     0.0),
+1010:                                                         child: Text(
+1011:                                                           '+3%',
+1012:                                                           style: FlutterFlowTheme
+1013:                                                                   .of(context)
+1014:                                                               .bodySmall
+1015:                                                               .override(
+1016:                                                                 font:
+1017:                                                                     GoogleFonts
+1018:                                                                         .inter(
+1019:                                                                   fontWeight:
+1020:                                                                       FontWeight
+1021:                                                                           .w600,
+1022:                                                                   fontStyle: FlutterFlowTheme.of(
+1023:                                                                           context)
+1024:                                                                       .bodySmall
+1025:                                                                       .fontStyle,
+1026:                                                                 ),
+1027:                                                                 color: Colors
+1028:                                                                     .white,
+1029:                                                                 fontSize: 11.0,
+1030:                                                                 letterSpacing:
+1031:                                                                     0.0,
+1032:                                                                 fontWeight:
+1033:                                                                     FontWeight
+1034:                                                                         .w600,
+1035:                                                                 fontStyle: FlutterFlowTheme.of(
+1036:                                                                         context)
+1037:                                                                     .bodySmall
+1038:                                                                     .fontStyle,
+1039:                                                               ),
+1040:                                                         ),
+1041:                                                       ),
+1042:                                                     ),
+1043:                                                   ),
+1044:                                                 ],
+1045:                                               ),
+1046:                                               Text(
+1047:                                                 '94.7%',
+1048:                                                 style:
+1049:                                                     FlutterFlowTheme.of(context)
+1050:                                                         .headlineMedium
+1051:                                                         .override(
+1052:                                                           font: GoogleFonts
+1053:                                                               .interTight(
+1054:                                                             fontWeight:
+1055:                                                                 FontWeight.bold,
+1056:                                                             fontStyle:
+1057:                                                                 FlutterFlowTheme.of(
+1058:                                                                         context)
+1059:                                                                     .headlineMedium
+1060:                                                                     .fontStyle,
+1061:                                                           ),
+1062:                                                           color: Colors.white,
+1063:                                                           letterSpacing: 0.0,
+1064:                                                           fontWeight:
+1065:                                                               FontWeight.bold,
+1066:                                                           fontStyle:
+1067:                                                               FlutterFlowTheme.of(
+1068:                                                                       context)
+1069:                                                                   .headlineMedium
+1070:                                                                   .fontStyle,
+1071:                                                         ),
+1072:                                               ),
+1073:                                               Text(
+1074:                                                 'Fulfillment Rate',
+1075:                                                 style: FlutterFlowTheme.of(
+1076:                                                         context)
+1077:                                                     .bodySmall
+1078:                                                     .override(
+1079:                                                       font: GoogleFonts.inter(
+1080:                                                         fontWeight:
+1081:                                                             FlutterFlowTheme.of(
+1082:                                                                     context)
+1083:                                                                 .bodySmall
+1084:                                                                 .fontWeight,
+1085:                                                         fontStyle:
+1086:                                                             FlutterFlowTheme.of(
+1087:                                                                     context)
+1088:                                                                 .bodySmall
+1089:                                                                 .fontStyle,
+1090:                                                       ),
+1091:                                                       color: Color(0xCCFFFFFF),
+1092:                                                       fontSize: 11.0,
+1093:                                                       letterSpacing: 0.0,
+1094:                                                       fontWeight:
+1095:                                                           FlutterFlowTheme.of(
+1096:                                                                   context)
+1097:                                                               .bodySmall
+1098:                                                               .fontWeight,
+1099:                                                       fontStyle:
+1100:                                                           FlutterFlowTheme.of(
